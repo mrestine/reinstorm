@@ -3,7 +3,8 @@
 A custom harness for my local models running in an ollama container.
 
 This is still very much under construction. Right now, it's just
-* A FastAPI Python server with a single endpoint to post a message and stream a response to a hard-coded model.
+* A FastAPI Python server with endpoints to get models and post a message with a response stream.
+* A React frontend built with Vite that can select a model, send, and receive a message
 
 I could very easily use AI to vibe my way through this, but I myself want the experience of interfacing more deeply with AI and building with Python. 
 
@@ -29,4 +30,10 @@ uv run uvicorn reinstorm.app:app --reload --port 8000
 Testing the endpoint:
 ```
 curl -N -X POST localhost:8000/chat -d '{"message":"ping"}' -H 'content-type: application/json'
+```
+
+Running the frontend in dev mode:
+```
+cd frontend
+npm run dev
 ```
